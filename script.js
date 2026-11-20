@@ -22,3 +22,24 @@ themeToggleBtn.addEventListener("click", ()=>{
         themeToggleBtn.textContent = "Dark Mode"
     }
 })
+
+// CLICKING THE CIRCLE ON EACH DARD
+allCheckCircles.forEach((circle) =>{
+    circle.addEventListener("click", ()=>{
+        // FIND THE PARENT TASK CARD
+        const card = circle.closest(".task-card");
+
+        // TOGGLE .IS-COMPLETED CLASS ON THE CARD
+        card.classList.toggle("is-completed");
+
+        // ADD OR REMOVE THE CHECKMARK SYMBOL INSIDE THE CIRCLE
+        if(card.classList.contains("is-completed")){
+            circle.textContent = "✓";
+        } else {
+            circle.textContent = "";
+        }
+
+        updateStats();
+        applyFilter();
+    })
+});
