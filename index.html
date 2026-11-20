@@ -3,12 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Focus Board</title>
+    <title>Interactive Task And Habit Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    
+
+    <div class="page-wrapper">
+
+        <!-- TOP HEADER -->
+         <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                        <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                        <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                        <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                    </svg>
+                </div>
+                <h1 class="brand-title">FocusBoard</h1>
+            </div>
+            <button class="btn theme--btn" id="theme-toggle-btn">🌙 Dark Mode</button>
+         </header>
+
+         <!-- MAIN CONTENT -->
+        <main>
+          <!-- FILTER AND STATS -->
+          <section class="control-bar">
+              <div class="filter-btns">
+                  <button class="filter-btn is-active" id="filter-all">All Tasks</button>
+                  <button class="filter-btn" id="filter-pending">Pending</button>
+                  <button class="filter-btn" id="filter-completed">Completed</button>
+              </div>
+              <p class="stats-text"><span id="total-completed-task">0</span> of <span id="total-task">4</span> completed</p>
+          </section>
+          <!-- TASK CARDS -->
+           <section class="task-grid">
+              <!-- CARD 1 -->
+              <article class="card-card">
+                  <div card-header>
+                      <span class="badge">CSS Grid</span>
+                      <button class="check-circle" aria-label="Mark task complete"></button>
+                  </div>
+                  <h1 class="card-title">Responsive Grid Shell</h1>
+                  <p class="task-description">
+                      Configure auto-fit column tracks with minmax(240px, 1fr) 
+                      so cards reflow cleanly across viewports.
+                  </p>
+              </article>
+              <!-- CARD 2 -->
+              <article class="card-card">
+                  <div card-header>
+                      <span class="badge">Semantic HTML</span>
+                      <button class="check-circle" aria-label="Mark task complete"></button>
+                  </div>
+                  <h1 class="card-title">Landmark Region Hierarchy</h1>
+                  <p class="task-description">
+                      Structure header, nav, main, and article elements with 
+                      clear accessible labels for assistive tools.
+                  </p>
+              </article>
+              <!-- CARD 3 -->
+              <article class="card-card">
+                  <div card-header>
+                      <span class="badge">JavaScript Events</span>
+                      <button class="check-circle" aria-label="Mark task complete"></button>
+                  </div>
+                  <h1 class="card-title">Delegated Filter Listeners</h1>
+                  <p class="task-description">
+                      Wire roving keyboard navigation and click handlers 
+                      to switch filter states and recalculate counts.
+                  </p>
+              </article>
+              <!-- CARD 4 -->
+              <article class="card-card">
+                  <div card-header>
+                      <span class="badge">Flexbox Alignment</span>
+                      <button class="check-circle" aria-label="Mark task complete"></button>
+                  </div>
+                  <h1 class="card-title">Control Bar Baseline Sync</h1>
+                  <p class="task-description">
+                      Align filter chips and completion metrics with flex-wrap 
+                      so narrow screens wrap without overflow.
+              </article>
+           </section>
+        </main>
+    </div>
+
 </body>
 </html>
