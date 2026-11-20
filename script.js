@@ -43,3 +43,22 @@ allCheckCircles.forEach((circle) =>{
         applyFilter();
     })
 });
+
+// FILTER BUTTON LISTENERS
+filterAllBtn.addEventListener("click", ()=>{
+    setActiveFilterButton(filterAllBtn);
+    currentFilter = "all";
+    applyFilter();
+});
+
+filterPendingBtn.addEventListener("click", ()=>{
+    setActiveFilterButton(filterPendingBtn);
+    currentFilter = "pending";
+    applyFilter();
+});
+
+filterCompletedBtn.addEventListener("click", ()=>{
+    setActiveFilterButton(filterCompletedBtn);
+    currentFilter = "completed";
+    applyFilter();
+});
