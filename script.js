@@ -62,3 +62,33 @@ filterCompletedBtn.addEventListener("click", ()=>{
     currentFilter = "completed";
     applyFilter();
 });
+
+// HELPER FUNCTIONS
+function setActiveFilterButton(clickedButton){
+    allFilterBtns.forEach((btn)=>{
+        btn.classList.remove("is-active");
+    });
+    clickedButton.classList.add("is-active");
+};
+
+function applyFilter(){
+    allTaskCards.forEach((card)=>{
+        const isCompleted = card.classList.contains("is-completed");
+
+        if(currentFilter === "all"){
+            card.classList.remove("is-hidden");
+        } else if (currentFilter === "pending"){
+            // HIDE IF IT IS COMPLETED
+            card.classList.toggle("is-hidden", isCompleted);
+        } else if (currentFilter === "completed"){
+            // HIDE IF IT IS NOT COMPLETED
+            card.classList.toggle("is-hidden", !isCompleted);
+        }
+    });
+};
+
+function updateStats(){
+    const completedCards = document.querySelectorAll(".task-card.is-completed");
+    totalCompletedTaskSpan.textContent = `${completedCards.length}`;
+    totalTaskSpan.textContent = `${allTaskCards.length}`;
+}
