@@ -8,3 +8,17 @@ const totalTaskSpan = document.getElementById("total-task");
 const allFilterBtns = document.querySelectorAll(".filter-btn");
 const allTaskCards = document.querySelectorAll(".task-card");
 const allCheckCircles = document.querySelectorAll(".check-circle");
+
+// TRACK WHICH FILTER IS CURRENTLY SELECTED ("ALL", "PENDING", OR "COMPLETED")
+let currentFilter = "all";
+
+// DARK / LIGHT MODE TOGGLE
+themeToggleBtn.addEventListener("click", ()=>{
+    document.body.classList.toggle("dark-mode");
+
+    if(themeToggleBtn.textContent === "Dark Mode"){
+        themeToggleBtn.textContent = "Light Mode";
+    } else {
+        themeToggleBtn.textContent = "Dark Mode"
+    }
+})
